@@ -448,7 +448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   rb: {fileID: 1083644120}
   moveSpeed: 5
-  move: {fileID: 5835488713253065591, guid: b2a035ea1d9be98458d0923014df6a46, type: 3}
+  move: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  fire: {fileID: -446408858148334313, guid: b2a035ea1d9be98458d0923014df6a46, type: 3}
 --- !u!114 &1083644119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +495,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
