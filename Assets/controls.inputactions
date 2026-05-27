@@ -1,56 +1,43 @@
 {
     "version": 1,
-    "name": "controls",
+    "name": "Controls",
     "maps": [
         {
-            "name": "Gameplay",
-            "id": "a2c2028f-33c9-4ed1-b9d8-c161a6ff62d7",
+            "name": "Player",
+            "id": "7c8f6ee1-be7f-4325-a1af-32f6d101b288",
             "actions": [
                 {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "e4547b3b-c5cc-412c-aac6-e10e2eb2474e",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
-                    "type": "PassThrough",
-                    "id": "a1010c4a-388f-4119-bf11-33f7d0da6745",
+                    "type": "Value",
+                    "id": "6b7aa65c-b393-40aa-a20b-dc35551fc7eb",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "d97cf7d1-313c-4fb8-9351-74524194973a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "14939ae6-c20b-4e1a-a5b3-2011db2fe0d9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "065e1492-f7b2-4484-a7cb-4faac9a02483",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "058aeb3d-e9bd-423a-bcb8-e19cf9beb938",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "2D Vector",
-                    "id": "5ab2c46d-8831-4dc3-9c36-f0b8b75e93d2",
+                    "name": "FB",
+                    "id": "b3b355d1-97ce-48fe-890a-f0b0118b9d06",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -60,48 +47,48 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "cbd94805-99a9-4da4-a5fb-20a9d862c5bd",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "7b2c3c75-9c4e-4b0e-b440-460538a646dc",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "left",
-                    "id": "50fe464d-fb27-4616-a857-b37bb9087ea7",
+                    "id": "efcf8f31-faef-430f-aa91-125dce8bb4de",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "2ced3517-d306-443b-aa95-51557b0f4eed",
+                    "id": "fe99cdaf-44f5-45fa-b777-a3dc646368b8",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "7e3586b2-04d7-4b03-9617-4adbaf828ccc",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e5fa0dc-a00a-49e3-975d-0b6dc67b5ae9",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
