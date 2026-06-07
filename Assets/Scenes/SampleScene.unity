@@ -624,7 +624,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.046308063, y: 0.0021538138}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -634,7 +634,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.17, y: 0.55}
+  m_Size: {x: 0.35738635, y: 0.5456923}
   m_EdgeRadius: 0
 --- !u!50 &650667473
 Rigidbody2D:
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: 7c8f6ee1-be7f-4325-a1af-32f6d101b288
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!212 &650667476
