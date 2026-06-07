@@ -707,7 +707,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: 7c8f6ee1-be7f-4325-a1af-32f6d101b288
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!212 &650667476
@@ -778,7 +778,7 @@ Transform:
   m_GameObject: {fileID: 650667471}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.62083, y: -1.13936, z: 0}
+  m_LocalPosition: {x: -2.828, y: -1.13936, z: 0}
   m_LocalScale: {x: 5.55, y: 5.55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
