@@ -5,15 +5,18 @@ using UnityEngine.InputSystem;
 public class PlayerControls : MonoBehaviour
 {
     public Rigidbody2D rb;
-    private Animator anim;
+    public Animator anim;
 
     public float moveSpeed;
-
     private Vector2 moveDirection;
 
-    public InputActionReference move;
-    public InputActionReference crouch;
-    public InputActionReference jump;
+    [SerializeField] private InputActionReference move;
+    [SerializeField] private InputActionReference crouch;
+    [SerializeField] private InputActionReference jump;
+
+    private bool crouchHeld = false;
+    private bool pressedJump = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,14 +26,20 @@ public class PlayerControls : MonoBehaviour
 
     private void OnEnable()
     {
-        crouch.action.started += Crouch;
-        jump.action.started += Jump;
+        crouch.action.started += startCrouch => crouchHeld = true;
+        crouch.action.canceled += endCrouch => crouchHeld = false;
+
+        jump.action.started += Jump => pressedJump = true; ;
     }
+
+    
 
     private void OnDisable()
     {
-        crouch.action.started -= Crouch;
-        jump.action.started -= Jump;
+        crouch.action.started -= startCrouch => crouchHeld = true;
+        crouch.action.canceled -= endCrouch => crouchHeld = false;
+
+        jump.action.started -= Jump => pressedJump = true; ;
     }
 
     // Update is called once per frame
@@ -42,16 +51,16 @@ public class PlayerControls : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-    }
 
-    private void Crouch(InputAction.CallbackContext context)
-    {
-        anim.SetBool("isCrouching", true);
-        Debug.Log("Crouch");
-    }
-
-    private void Jump(InputAction.CallbackContext context)
-    {
-        Debug.Log("Jump");
+        if (crouchHeld)
+        {
+            anim.SetBool("isCrouching", true);
+            Debug.Log("Crouching");
+        }
+        else
+        {
+            anim.SetBool("isCrouching", false);
+            Debug.Log("Standing");
+        }
     }
 }
