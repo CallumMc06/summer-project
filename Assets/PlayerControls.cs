@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class PlayerControls : MonoBehaviour
     public Animator anim;
 
     public float moveSpeed;
-    private Vector2 moveDirection;
+    public float jumpForce;
+    public float horizontal;
 
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference crouch;
@@ -45,13 +47,14 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDirection = move.action.ReadValue<Vector2>();
+        horizontal = move.action.ReadValue<Vector2>().x;
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
 
+        //Crouch Code
         if (crouchHeld)
         {
             anim.SetBool("isCrouching", true);
@@ -60,7 +63,15 @@ public class PlayerControls : MonoBehaviour
         else
         {
             anim.SetBool("isCrouching", false);
-            Debug.Log("Standing");
+        }
+        //End
+
+        //Jump Code
+        if (pressedJump)
+        {
+            rb.AddForce(new Vector2(rb.linearVelocity.x, jumpForce));
+            pressedJump = false;
+            Debug.Log("Jumped");
         }
     }
 }

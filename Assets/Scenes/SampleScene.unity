@@ -342,7 +342,7 @@ Transform:
   m_GameObject: {fileID: 347737113}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.53, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 20, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -454,7 +454,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -652,7 +652,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -677,7 +677,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
   rb: {fileID: 650667473}
-  moveSpeed: 1
+  anim: {fileID: 0}
+  moveSpeed: 5
+  jumpForce: 1000
+  horizontal: 0
   move: {fileID: -8318376636496106708, guid: 4934781b2f8657f41a2c9333f6143ab3, type: 3}
   crouch: {fileID: -3449985968908423555, guid: 4934781b2f8657f41a2c9333f6143ab3, type: 3}
   jump: {fileID: -1769883586763857322, guid: 4934781b2f8657f41a2c9333f6143ab3, type: 3}
