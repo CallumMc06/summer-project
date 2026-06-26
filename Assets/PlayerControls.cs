@@ -73,5 +73,6 @@ public class PlayerControls : MonoBehaviour
             pressedJump = false;
             Debug.Log("Jumped");
         }
+        //End(
     }
 }
