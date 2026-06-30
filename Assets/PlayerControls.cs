@@ -13,6 +13,7 @@ public class PlayerControls : MonoBehaviour
     public float jumpForce;
     public float horizontal;
 
+    //Input Action References
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference crouch;
     [SerializeField] private InputActionReference jump;
@@ -54,9 +55,13 @@ public class PlayerControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
+        Grounded();
+    }
 
+    //Grounded Functions
+    private void Grounded()
+    {
         //Crouch Code (Work in Progress)
         if (crouchHeld)
         {
@@ -77,5 +82,13 @@ public class PlayerControls : MonoBehaviour
             Debug.Log("Jumped");
         }
         //End
+    }
+
+    //Air Functions
+
+    //helpers
+    public bool IsGrounded()
+    {
+
     }
 }
