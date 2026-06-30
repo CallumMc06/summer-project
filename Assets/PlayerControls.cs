@@ -7,6 +7,7 @@ public class PlayerControls : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator anim;
+    public BoxCollider2D hitbox;
 
     public float moveSpeed;
     public float jumpForce;
@@ -22,8 +23,9 @@ public class PlayerControls : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        hitbox = GetComponent<BoxCollider2D>();
     }
 
     private void OnEnable()
@@ -52,9 +54,10 @@ public class PlayerControls : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
 
-        //Crouch Code
+        //Crouch Code (Work in Progress)
         if (crouchHeld)
         {
             anim.SetBool("isCrouching", true);
@@ -66,13 +69,13 @@ public class PlayerControls : MonoBehaviour
         }
         //End
 
-        //Jump Code
+        //Jump Code (Work in Progress)
         if (pressedJump)
         {
             rb.AddForce(new Vector2(rb.linearVelocity.x, jumpForce));
             pressedJump = false;
             Debug.Log("Jumped");
         }
-        //End(
+        //End
     }
 }

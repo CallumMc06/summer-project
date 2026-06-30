@@ -678,6 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
   rb: {fileID: 650667473}
   anim: {fileID: 0}
+  hitbox: {fileID: 0}
   moveSpeed: 5
   jumpForce: 1000
   horizontal: 0
