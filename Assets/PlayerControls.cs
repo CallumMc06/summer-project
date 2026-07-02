@@ -9,15 +9,19 @@ public class PlayerControls : MonoBehaviour
     public Animator anim;
     public BoxCollider2D hitbox;
 
+    //Random Variables
     public float moveSpeed;
     public float jumpForce;
     public float horizontal;
+
+    public bool grounded;
 
     //Input Action References
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference crouch;
     [SerializeField] private InputActionReference jump;
 
+    //Enable Disable bools
     private bool crouchHeld = false;
     private bool pressedJump = false;
 
@@ -56,11 +60,14 @@ public class PlayerControls : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
-        Grounded();
+        if (grounded)
+        {
+            GroundedActions();
+        }
     }
 
     //Grounded Functions
-    private void Grounded()
+    private void GroundedActions()
     {
         //Crouch Code (Work in Progress)
         if (crouchHeld)
@@ -86,9 +93,22 @@ public class PlayerControls : MonoBehaviour
 
     //Air Functions
 
-    //helpers
-    public bool IsGrounded()
+    //Collision Management
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.layer == 6)
+        {
+            Debug.Log("grounded");
+            grounded = true;
+        }
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            Debug.Log("not");
+            grounded = false;
+        }
     }
 }
