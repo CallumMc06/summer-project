@@ -777,6 +777,7 @@ MonoBehaviour:
   move: {fileID: -8318376636496106708, guid: 4934781b2f8657f41a2c9333f6143ab3, type: 3}
   crouch: {fileID: -3449985968908423555, guid: 4934781b2f8657f41a2c9333f6143ab3, type: 3}
   jump: {fileID: -1769883586763857322, guid: 4934781b2f8657f41a2c9333f6143ab3, type: 3}
+  lite: {fileID: 6672072789713794673, guid: 4934781b2f8657f41a2c9333f6143ab3, type: 3}
 --- !u!114 &650667475
 MonoBehaviour:
   m_ObjectHideFlags: 0

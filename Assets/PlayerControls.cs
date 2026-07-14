@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,10 +21,13 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference crouch;
     [SerializeField] private InputActionReference jump;
+    [SerializeField] private InputActionReference lite;
 
     //Enable Disable bools
     private bool crouchHeld = false;
     private bool pressedJump = false;
+
+    private bool lightAttack = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +42,9 @@ public class PlayerControls : MonoBehaviour
         crouch.action.started += startCrouch => crouchHeld = true;
         crouch.action.canceled += endCrouch => crouchHeld = false;
 
-        jump.action.started += Jump => pressedJump = true; ;
+        jump.action.started += Jump => pressedJump = true;
+
+        lite.action.started += Lite => lightAttack = true;
     }
 
     
@@ -48,7 +54,9 @@ public class PlayerControls : MonoBehaviour
         crouch.action.started -= startCrouch => crouchHeld = true;
         crouch.action.canceled -= endCrouch => crouchHeld = false;
 
-        jump.action.started -= Jump => pressedJump = true; ;
+        jump.action.started -= Jump => pressedJump = true;
+
+        lite.action.started += Lite => lightAttack = true;
     }
 
     // Update is called once per frame
@@ -87,6 +95,14 @@ public class PlayerControls : MonoBehaviour
             rb.AddForce(new Vector2(rb.linearVelocity.x, jumpForce));
             pressedJump = false;
             Debug.Log("Jumped");
+        }
+
+        //attacks
+        if (lightAttack)
+        {
+            anim.SetTrigger("lightAttacking");
+            lightAttack = false;
+            Debug.Log("Light");
         }
         //End
     }
