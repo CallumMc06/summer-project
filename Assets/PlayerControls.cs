@@ -6,9 +6,12 @@ using UnityEngine.Rendering;
 
 public class PlayerControls : MonoBehaviour
 {
+    //starters
     public Rigidbody2D rb;
     public Animator anim;
-    public BoxCollider2D hitbox;
+
+    //Moves
+    public HitboxData LightPunch;
 
     //Random Variables
     public float moveSpeed;
@@ -34,7 +37,6 @@ public class PlayerControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        hitbox = GetComponent<BoxCollider2D>();
     }
 
     private void OnEnable()

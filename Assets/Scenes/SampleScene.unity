@@ -769,7 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
   rb: {fileID: 650667473}
   anim: {fileID: 650667478}
-  hitbox: {fileID: 0}
+  LightPunch: {fileID: 11400000, guid: e86501c4ec9b17f4b90be05919c5ea70, type: 2}
   moveSpeed: 5
   jumpForce: 1000
   horizontal: 0
